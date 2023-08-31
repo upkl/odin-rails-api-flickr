@@ -1,0 +1,11 @@
+<h1>Flickr display</h1>
+
+<%= form_with url: '/', method: :get do |f| %>
+  <%= f.label :user %>
+  <%= f.text_field :user %>
+  <%= f.submit "Display photos" %>
+<% end %>
+
+<% if params[:user] %>
+  :-)
+<% end %>
