@@ -1,11 +1,14 @@
 <h1>Flickr display</h1>
 
 <%= form_with url: '/', method: :get do |f| %>
-  <%= f.label :user %>
-  <%= f.text_field :user %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
   <%= f.submit "Display photos" %>
 <% end %>
 
-<% if params[:user] %>
-  :-)
+<% if @photos %>
+  <h2><%= @user.username %>’s photos</h2>
+  <% @photos.each do |photo| %>
+  <%= image_tag Flickr.url(photo) %>
+  <% end %>
 <% end %>
